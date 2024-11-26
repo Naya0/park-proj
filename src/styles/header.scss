@@ -1,0 +1,183 @@
+.header {
+    width: 100%;
+    display: grid;
+    // grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 'logo desktop-menu contacts';
+    align-items: center;
+    padding: 20px 0;
+    padding-bottom: 0;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        grid-area: logo;
+        gap: 10px;
+
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 20px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .desktop-menu__nav {
+        @include flex;
+        gap: 20px;
+
+        grid-area: desktop-menu;
+
+        a {
+            font-size: 14px;
+            transition: .25s;
+
+            &:hover {
+                cursor: pointer;
+                color: $active;
+            }
+        }
+
+        @media screen and (max-width: 730px) {
+            display: none;
+        }
+    }
+
+    &_contacts {
+        @include flex;
+        justify-content: flex-end;
+
+        grid-area: contacts;
+
+        font-size: 15px;
+        gap: 8px;
+
+        a {
+            @include flex;
+
+            svg {
+                width: 20px;
+                height: 20px;
+                transition: .25s;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: $active;
+                transition: .25s;
+
+                svg {
+                    fill: $active;
+                }
+            }
+        }
+
+        @media screen and (max-width: 730px) {
+            justify-content: center;
+        }
+    }
+
+    &_phone-menu {
+        @include flex;
+        justify-content: flex-end;
+
+        grid-area: phone-menu;
+        position: relative;     
+
+        margin: 0 10px;
+
+        .icon-menu {
+            width: 40px;
+            height: 4vh;
+        }
+
+        @media screen and (min-width: 730px) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 730px) {
+        grid-template-areas: 'logo contacts phone-menu';
+
+    }
+}
+
+.phone-menu {
+    &__content {
+        position: fixed;
+        background: $baseGreen;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        left: 0;
+        padding: 5%;
+        transition: .5s;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__header {
+        @include flex-jc-sb;
+        width: 100%;
+        margin: 15px 0;
+        color: white;
+
+        .icon-close {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+
+        a {
+            color: white;
+            font-size: 1.2em;
+            width: fit-content;
+            transition: .25s;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+        }
+
+    }
+
+    &__footer {
+        p {
+            font-size: 1em;
+            color: white;
+        }
+
+        .icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+
+            .icon {
+                width: 30px;
+                height: 30px;
+                fill: rgba(255, 255, 255, 0.649);
+            }
+        }
+    }
+
+   
+}

@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // font-family: "Inter", sans-serif;
+    font-family: "Manrope", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.app {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media only screen and (max-width: 1200px) {
+        width: calc(100% - 50px);
+    }
+}
+
+.icon {
+    width: 12px;
+    height: 12px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+svg {
+    fill: #666666;
+    width: 12px;
+    height: 12px;
+}
+
+section {
+    margin: auto;
+
+    @media only screen and (max-width: 980px) {
+        padding: 0;
+    }
+}
+
+a {
+    color: $primary;
+    text-decoration: none;
+}
+
+.button {
+    @include flex;
+    gap: 10px;
+
+    font-size: 14px;
+    font-weight: normal;
+    width: 250px;
+    height: 60px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: transparent;
+    transition: .25s;
+
+    &:hover {
+        cursor: pointer;
+        background: $white;
+        color: $darkGreen;
+
+        svg {
+            fill: $darkGreen;
+            transition: .25s;
+        }
+    }
+
+    @media only screen and (max-width: 980px) {
+        width: 100%;
+    }
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+
+h1 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 48px;
+    margin-top: 25px;
+    color: $primary;
+
+    @media only screen and (max-width: 980px) {
+        font-size: 28px;
+        line-height: 28px;
+    }
+}
+
+h2 {
+    color: $blue;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 500;
+    margin: 40px 0;
+
+    @media only screen and (max-width: 980px) {
+        margin-bottom: 0;
+        margin-top: 40px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        font-size: 28px;
+        line-height: 25px;
+        text-align: center;
+    }
+}
+
+h3 {
+    margin: 40px 0;
+    line-height: 32px;
+    color: $blue;
+    font-weight: 600;
+    font-size: 28px;
+
+    @media only screen and (max-width: 631px) {
+        margin-top: 0;
+    }
+}
+
+
+p {
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary;
+}
+
+.closeOpenModal {
+    left: 100% !important;
+}

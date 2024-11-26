@@ -1,0 +1,79 @@
+.buttons-app-download {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+
+    button {
+        width: 120px;
+        height: 50px;
+
+        .content {
+            @include flex;
+            gap: 10px;
+            width: 100%;
+            padding: 0 7px;
+
+            .buttons-title {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .subtitle {
+                    font-size: 8px;
+                }
+
+                .title {
+                    font-size: 12px;
+                }
+
+            }
+
+            svg {
+                fill: $white;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &:hover {
+            & * {
+                color: $primary;
+            }
+
+            svg {
+                fill: $primary;
+            }
+        }        
+    }
+}
+
+.button-messager {
+    @include flex;
+    
+    height: 60px;
+    width: 180px;
+    background: $blueForm;
+    border-radius: 12px;
+    transition: .25s;
+
+    &__container {
+        @include flex;
+        gap: 10px;
+
+        color: $white;
+        font-weight: 500;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: $white;
+        }
+    }
+
+    &:hover {
+        background-color: #4b5375;
+    }
+}

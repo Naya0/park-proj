@@ -1,0 +1,105 @@
+.section-advantages {
+
+    .advantages-arrow {
+        @include flex;
+        padding: 20px 0;
+        animation: arrow-animate 1s infinite alternate-reverse ease-in 1s;
+
+        svg {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .advantages {
+        border: 1px solid $lightgrey;
+        border-radius: 8px;
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        &-item {
+            display: grid;
+            grid-template-rows: 1fr 1fr 2fr;
+            gap: 20px;
+            padding: 30px 20px;
+            border-right: 1px solid $lightgrey;
+
+            &:last-child {
+                border: none;
+            }
+
+            svg {
+                height: 40px;
+                width: 40px;
+            }
+
+            &__title {
+                font-size: 18px;
+                line-height: 18px;
+                font-weight: 600;
+            }
+
+            &__icon {
+                display: flex;
+                align-items: center;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 980px) and (min-width: 601px) {
+            grid-template-columns: repeat(2, 1fr);
+            color: red !important;
+            border: none;
+
+            .advantages-item {
+                border: none;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            grid-template-columns: 1fr;
+            border-right: none;
+            border-radius: 8px 0 0 8px  ;
+
+            &>div {
+                width: 100%;
+            }
+
+            .advantage-item__slide {
+                border-right: 1px solid $lightgrey ;
+
+                &:last-child {
+                    border: none;
+                }
+
+                &>div {
+                    height: 100%;
+                }
+            }
+
+            .advantages-swiper {
+
+
+                .swiper-wrapper {
+                    display: flex;
+                    width: 500px;
+
+                    &-item {
+                        width: 400px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes arrow-animate  {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

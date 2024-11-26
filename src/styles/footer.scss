@@ -1,0 +1,166 @@
+footer {
+
+    .footer {
+
+        &-content {
+            display: grid;
+            grid-template-areas: "contact-information navigation requisite";
+            gap: 20px;
+
+            padding: 20px;
+
+
+
+            @media screen and (max-width: 1000px) {
+                grid-template-areas:
+                    "contact-information navigation"
+                    "requisite .";
+
+            }
+
+            @media screen and (max-width: 650px) {
+                grid-template-areas:
+                    "contact-information contact-information"
+                    " navigation requisite";
+                padding: 20px 0;
+            }
+
+        }
+
+        &__contact-information {
+            grid-area: contact-information;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            gap: 10px;
+
+            .logo {
+                font-size: 30px;
+            }
+
+
+        }
+
+        &__contacts {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: center;
+            gap: 30px;
+
+            width: 100%;
+
+
+            &>div {
+                @include flex-jc-sb;
+
+                color: white;
+                align-items: flex-end;
+                border-bottom: 1px solid white;
+
+                .title {
+                    font-size: 14px;
+                }
+
+                .value {
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &__messangers {
+            @include flex-jc-sb;
+            gap: 5px;
+
+
+            .button-messager {
+                @media screen and (max-width: 650px) {
+                    width: 100%;
+                }
+            }
+        }
+
+        &__content-buttons {
+            @include flex-jc-sb;
+            gap: 5px;
+
+            button {
+                padding: 10px;
+            }
+
+            .icon {
+                fill: white;
+
+                @media screen and (max-width: 650px) {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+
+        &-navigation {
+            grid-area: navigation;
+
+            width: max-content;
+            margin: 0 auto;
+            position: relative;
+
+            &__links {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            a {
+                width: max-content;
+            }
+
+            a:hover {
+                color: $buttonGreen;
+                transition: .25s;
+            }
+        }
+
+        &-requisite {
+            grid-area: requisite;
+
+            .title {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+
+    }
+
+    & div {
+        position: relative;
+    }
+
+    .buttons-app-download {
+        @include flex-jc-sb;
+
+        button {
+            width: inherit;
+        }
+
+        .icon {
+            @media screen and (max-width: 650px) {
+                width: 15px !important;
+                height: 15px;
+            }
+        }
+    }
+
+    & * {
+        color: white;
+        font-size: 14px;
+    }
+
+}

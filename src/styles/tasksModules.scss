@@ -1,0 +1,543 @@
+.tasks-module__parking {
+    position: relative;
+    padding: 0;
+
+    .parking {
+        &-title {
+            @include flex;
+
+            border-radius: 30px;
+            color: $white;
+            background-color: $blue;
+            font-size: 36px;
+            font-weight: 600;
+            width: 400px;
+            height: 60px;
+            margin-bottom: 20px;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 18px;
+                width: 207px;
+                height: 42px;
+                margin: 20px auto;
+                margin-top: 30px;
+            }
+        }
+
+        &-description {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            width: 80%;
+            margin-bottom: 20px;
+
+            @media only screen and (max-width: 600px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        &-offer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+
+
+            &__calculation {
+                border-radius: 12px;
+                padding: 30px 20px;
+                background: linear-gradient(120deg, #308e72, #72b6a1);
+                background: -moz-linear-gradient(120deg, #308e72, #72b6a1);
+                background: -webkit-radial-gradient(120deg, #308e72, #72b6a1);
+                color: $white;
+
+                &-title {
+                    font-size: 24px;
+                    color: $white;
+                    line-height: 28px;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+
+                    @media only screen and (max-width: 600px) {
+                        font-size: 18px;
+                        line-height: 20px;
+                    }
+                }
+
+                &-list {
+                    font-weight: 600;
+
+                    &-item {
+                        display: grid;
+                        grid-template-columns: 3fr 1fr;
+                        align-items: end;
+                        padding: 15px 0;
+                        border-bottom: 2px dotted #84aeb7;
+
+                        .title,
+                        .offer {
+                            color: $white;
+                            font-size: 12px;
+                            font-weight: 500;
+
+                            @media only screen and (max-width: 600px) {
+                                font-size: 16px;
+                            }
+                        }
+
+                        .offer {
+                            text-align: end;
+                        }
+
+                        @media only screen and (max-width: 600px) {
+                            grid-template-columns: 2fr 1fr;
+                        }
+                    }
+                }
+
+                &-price {
+                    .sum {
+                        color: $white;
+                        font-size: 60px;
+                        font-weight: 700;
+                        margin-top: 40px;
+                    }
+
+                    .description {
+                        color: $white;
+                        line-height: 19px;
+                        font-size: 18px;
+                        font-weight: 500;
+                        width: 70%;
+                        word-break: break-word;
+
+                    }
+                }
+
+                &-access {
+                    line-height: 19px;
+                    color: $white;
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-top: 40px;
+                }
+            }
+
+            &__app {
+                border-radius: 12px;
+                background-color: #def0f4;
+
+                &-image {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 12px;
+                    padding: 30px 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .buttons-app-download {
+                        position: relative;
+                        bottom: 0;
+                        justify-content: flex-start;
+                        flex-direction: column;
+
+                        @media only screen and (max-width: 9800px) {
+                            flex-direction: column;
+                        }
+
+                        @media only screen and (max-width: 600px) {
+                            flex-wrap: wrap;
+                            flex-direction: row;
+                            justify-content: space-between;
+                        }
+
+                        button {
+                            background-color: #000000;
+                            color: white;
+                            border: none;
+                            height: 35px;
+                            width: 110px;
+
+                            .content {
+                                justify-content: flex-start;
+
+                                .buttons-title {
+                                    @media only screen and (max-width: 600px) {
+                                        font-weight: 500;
+                                    }
+                                }
+
+                                @media only screen and (max-width: 600px) {
+                                    gap: 5px;
+                                }
+                            }
+
+                            @media only screen and (max-width: 600px) {
+                                width: 105px;
+                            }
+                        }
+                    }
+
+                    @media only screen and (max-width: 600px) {
+                        justify-content: flex-start;
+                        gap: 30px;
+                        padding: 20px 15px;
+                    }
+                }
+
+                &-information {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .title {
+                        color: $blue;
+                        font-size: 24px;
+                        font-weight: 600;
+                        line-height: 24px;
+                    }
+
+                    .list-dignity {
+                        &__item {
+                            line-height: 18px;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+
+                    @media only screen and (max-width: 1400px) {
+                        flex-direction: column;
+                        gap: 12px;
+                    }
+                }
+
+                @media only screen and (max-width: 600px) {
+                    height: 500px
+                }
+            }
+
+            @media only screen and (max-width: 980px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+.admin-panel {
+    &__list {
+        position: relative;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: 'a b c';
+
+        @media only screen and (min-width: 631px) and (max-width: 1200px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr auto;
+            grid-template-areas:
+                "a c"
+                "b b";
+        }
+
+        @media only screen and (max-width: 630px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas:
+                "a"
+                "b"
+                "c";
+        }
+    }
+
+    &__item {
+        position: relative;
+        height: 360px;
+        width: 380px;
+        background: $backGrey;
+        border-radius: 14px;
+        display: grid;
+        box-sizing: border-box;
+        align-content: space-between;
+
+        .description {
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: 600;
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+
+            @media only screen and (max-width: 1200px) {
+                font-size: 16px;
+                margin: 10px auto;
+            }
+
+            @media only screen and (max-width: 631px) {
+                margin-top: 40px;
+                font-size: 18px;
+                line-height: 20px;
+            }
+        }
+
+        .image-container {
+            height: 250px;
+            width: 100%;
+            padding: 0 10px;
+            display: flex;
+            align-items: flex-end;
+
+            .image {
+                height: 100%;
+                width: inherit;
+                object-fit: contain;
+                z-index: 2;
+            }
+
+            @media only screen and (max-width: 1200px) {
+                height: 225px;
+            }
+
+            @media only screen and (max-width: 630px) {
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+        .back {
+            &-container {
+                width: 90%;
+                margin: auto;
+                position: relative;
+
+                @media only screen and (max-width: 1200px) {
+                    width: 80%;
+                }
+            }
+
+            &-image {
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                top: 80px;
+
+                @media only screen and (max-width: 1200px) {
+                    top: 25px;
+                }
+
+                @media only screen and (max-width: 630px) {
+                    top: 70px;
+                }
+            }
+        }
+
+        &:nth-child(1) {
+            grid-area: a;
+        }
+
+        &:nth-child(3) {
+            grid-area: c;
+        }
+
+        &:nth-child(2) {
+            grid-area: b;
+
+            @media only screen and (min-width: 631px) and (max-width: 1200px) {
+                width: 100%;
+                height: auto;
+
+                .image-container {
+                    padding-top: 15px;
+                    width: 80%;
+                    height: auto;
+                    @include flex;
+                    margin: auto;
+
+                    .image {
+                        object-fit: fill;
+                    }
+                }
+            }
+        }
+
+        @media only screen and (min-width: 631px) and (max-width: 1200px) {
+            background-color: transparent;
+            height: 320px;
+        }
+
+        @media only screen and (min-width: 631px) and (max-width: 799px) {
+            width: 300px;
+        }
+
+        @media only screen and (max-width: 630px) {
+            width: 100%;
+        }
+
+    }
+}
+
+.form {
+    &-section {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    &-container {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+
+
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .button {
+                background: $white;
+                color: $blue;
+                font-weight: 600;
+                font-size: 16px;
+
+                svg {
+                    fill: $blue;
+                    width: 23px;
+                    height: 23px;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background: $buttonGreen;
+                    color: $white;
+                    border: none;
+
+                    svg {
+                        fill: $white;
+                    }
+                }
+
+                @media only screen and (max-width: 860px) {
+                    width: 260px;
+                }
+
+                @media only screen and (max-width: 500px) {
+                    width: 100%;
+                }
+            }
+
+            .privacy {
+                &-policy {
+                    line-height: 14px;
+                    font-size: 12px;
+                    color: #b3b7c5;
+                }
+
+                &-link {
+                    color: $white;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .information {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .title {
+                width: 80%;
+                line-height: 42px;
+                font-size: 36px;
+                font-weight: 500;
+                letter-spacing: -1px;
+                color: $white;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 30px;
+                    line-height: 30px;
+                    width: 100%;
+                }
+            }
+
+            .text {
+                width: 50%;
+                line-height: 16px;
+                font-size: 16px;
+                font-weight: 500;
+                color: $white;
+
+                @media only screen and (max-width: 860px) {
+                    display: none;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 860px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+    &-communication {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .title {
+            font-size: 16px;
+            color: $white;
+            font-weight: 500;
+            letter-spacing: -0.6px;
+
+        }
+
+        &__list {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+
+        @media only screen and (max-width: 860px) {
+            width: 70%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+        }
+
+    }
+
+    &-content__messangers {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+
+        @media only screen and (max-width: 600px) {
+            justify-content: space-between;
+
+            .button-messager {
+                width: 145px;
+            }
+        }
+    }
+
+}
